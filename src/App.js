@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
         <NavBar />
-        <ItemsListContainer />
+        <ItemsListContainer greeting="Bienvenido a roygbiv vynil store"/>
     </div>
   );
 }
