@@ -1,7 +1,9 @@
 .nav-bar__cart {
+  display: flex;
+  padding: 0 10px;
   background-color: #F8F9FA;
 }
 
 .nav-bar__cart__img {
-  width: 50px;
+  height: 50px;
 }

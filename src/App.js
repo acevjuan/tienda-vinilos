@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
         <NavBar />
-        <ItemsListContainer greeting="Bienvenido a roygbiv vynil store"/>
+        <ItemsListContainer greeting="Bienvenido a roygbiv record store" message="Acá encontras tus álbumes favoritos en formato atemporal"/>
     </div>
   );
 }
