@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.item-count__container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 10px 25px;
+  border: 2px solid #282c34;
+}
+
+.item-count__container__counter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.item-count__container__counter__quantity {
+  font-family: 'Joan', 'serif';
+}
+
+.item-count__container__counter__number {
+  font-family: 'Joan', 'serif';
+}
+
+.item-count__container__counter__add-btn, .item-count__container__counter__remove-btn {
+  color: #F8F9FA;
+  background-color: #212529;
+  border: none;
+  min-width: 21px;
+  min-height: 21px;
+}
+
+.item-count__container__add-cart {
+  color: #F8F9FA;
+  background-color: #212529;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'Joan', 'serif';
+}
+
