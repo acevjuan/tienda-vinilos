@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      <ItemDetail cover={album?.cover} title={album?.title} artist={album?.artist} released={album?.released} genre={album?.genre}/>
+      <ItemDetail cover={album?.cover} title={album?.title} artist={album?.artist} price={album?.price} released={album?.released} genre={album?.genre} usersRating={album?.usersRating}/>
     </div>
   )
 }
