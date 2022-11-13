@@ -7,12 +7,22 @@ import './style.css'
 const ItemsListContainer = ({ greeting, message }) => {
   const [albumList, setAlbumList] = useState([]);
 
-  const parametros = useParams();
-  console.log(parametros);
+  const { filterBy } = useParams();
+  console.log(filterBy);
   
   const getAlbumList = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(items);
+      if (filterBy) {
+        console.log(`Filtrar por ${filterBy}`);
+        const filteredCategory = items.filter((item) => {
+          return item.genre === filterBy;
+        })
+        console.log(filteredCategory);
+        resolve(filteredCategory);
+      }
+      else {
+      resolve(items)
+      };
     }, 2000)
   })
 

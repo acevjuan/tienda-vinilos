@@ -28,7 +28,13 @@ const NavBar = () => {
             <NavLink to='/category/indie'>INDIE</NavLink>
           </li>
           <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/metal'>METAL</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
             <NavLink to='/category/hip-hop'>HIP HOP</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/electronic'>ELECTRÓNICA</NavLink>
           </li>
           <li className="nav-bar__menu__list__item">
             <NavLink to='/category/jazz'>JAZZ</NavLink>
