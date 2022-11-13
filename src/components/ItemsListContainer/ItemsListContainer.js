@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { items } from '../../data/data';
 import ItemList from '../ItemList/ItemList';
 import './style.css'
 
 const ItemsListContainer = ({ greeting, message }) => {
   const [albumList, setAlbumList] = useState([]);
+
+  const parametros = useParams();
+  console.log(parametros);
   
   const getAlbumList = new Promise((resolve, reject) => {
     setTimeout(() => {

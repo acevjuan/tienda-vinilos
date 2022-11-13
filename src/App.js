@@ -10,8 +10,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemsListContainer greeting="Bienvenido a roygbiv record store" message="Acá encontrarás tus álbumes favoritos, en un formato atemporal"/>} />
-        <Route path='/category' />
-        <Route path='/item' element={<ItemDetailContainer />} />
+        <Route path='/category/:filterBy' element={<ItemsListContainer greeting="Bienvenido a roygbiv record store" message="Acá encontrarás tus álbumes favoritos, en un formato atemporal"/>} />
+        <Route path='/item/:id' element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>
   );

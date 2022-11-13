@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget'
 import logo from '../../assets/logo.png'
 import './style.css'
@@ -11,14 +12,30 @@ const NavBar = () => {
       </div>
       <nav className="nav-bar__menu">
         <ul className="nav-bar__menu__list">
-          <li className="nav-bar__menu__list__item"><a href=''>HOME</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>NOVEDADES</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>MÁS VENDIDOS</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>ROCK</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>INDIE</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>HIP HOP</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>JAZZ</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>FOLK</a></li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/'>HOME</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/nuevos-lanzamientos'>NUEVOS LANZAMIENTOS</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/mas-vendidos'>MÁS VENDIDOS</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/rock'>ROCK</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/indie'>INDIE</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/hip-hop'>HIP HOP</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/jazz'>JAZZ</NavLink>
+          </li>
+          <li className="nav-bar__menu__list__item">
+            <NavLink to='/category/folk'>FOLK</NavLink>
+          </li>
         </ul>
       </nav>
       <CartWidget />
