@@ -3,7 +3,7 @@ import './ItemDetail.css';
 const ItemDetail = ({ cover, title, artist, price, released, genre, usersRating }) => {
   return (
     <div>
-      <img src={cover} style={{ maxWidth: '300px' }}/>
+      <img alt={title} src={cover} style={{ maxWidth: '300px' }}/>
       <h2>{title}</h2>
       <h3>{artist}</h3>
       <h4>$ {price}</h4>
