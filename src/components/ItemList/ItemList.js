@@ -1,8 +1,13 @@
-import './ItemList.css'
+import './ItemList.css';
+import Item from '../Item/Item';
 
-const ItemList = () => {
+const ItemList = ({ vinylList }) => {
   return (
-    <div className='prueba-styling'>ItemList</div>
+    <>
+      {vinylList.map((album) => (
+        <Item key={album.id} album={album} />
+      ))}
+    </>
   )
 }
 
