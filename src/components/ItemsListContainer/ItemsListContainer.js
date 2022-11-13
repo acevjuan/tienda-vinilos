@@ -4,26 +4,25 @@ import ItemList from '../ItemList/ItemList';
 import './style.css'
 
 const ItemsListContainer = ({ greeting, message }) => {
-  const [vinylList, setVinylList] = useState([]);
+  const [albumList, setAlbumList] = useState([]);
   
-  const getVinylList = new Promise((resolve, reject) => {
+  const getAlbumList = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(items);
     }, 2000)
   })
 
   useEffect(() => {
-    getVinylList.then(response => {
-      setVinylList(response);
-      console.log(response);
+    getAlbumList.then(response => {
+      setAlbumList(response);
     });
-  }, []);
+  });
 
   return (
     <div className="items-list-container">
       <h1 className="items-list-container_greeting">{greeting}</h1>
       <h2 className="items-list-container_message">{message}</h2>
-      <ItemList vinylList={vinylList}/>
+      <ItemList albumList={albumList}/>
     </div>
   )
 }

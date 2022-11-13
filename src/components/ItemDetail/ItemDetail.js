@@ -1,16 +1,15 @@
 import './ItemDetail.css';
 
-const ItemDetail = ({ albumList }) => {
+const ItemDetail = ({ cover, title, artist, released, genre }) => {
   return (
     <div>
-      <img alt="album cover" src={albumList[0].cover} style={{ maxWidth: '250px' }}/>
-      <h2>Title: {albumList[0].title}</h2>
-      <h3>Artist: {albumList[0].artist}</h3>
-      <h4>Price: $20.00</h4>
+      <img src={cover} style={{ maxWidth: '300px' }}/>
+      <h2>{title}</h2>
+      <h3>{artist}</h3>
+      <h4>$20.00</h4>
       <div>
-        <div>Year: {albumList[0].released}</div>
-        <div>Genre: {albumList[0].genre}</div>
-        <div>Other: Por definir</div>
+        <h4>Released: {released}</h4>
+        <h4>Genre: {genre}</h4>
       </div>
     </div>
   )

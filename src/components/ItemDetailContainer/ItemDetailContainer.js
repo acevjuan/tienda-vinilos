@@ -1,27 +1,27 @@
-import './ItemDetailContainer.css';
-import { items } from '../../data/data';
 import { useState, useEffect } from 'react';
+import { items } from '../../data/data';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
-  const [albumList, setAlbumList] = useState([]);
+  const [album, setAlbum] = useState();
 
-  const getAlbumList = new Promise((resolve, reject) => {
+  const getAlbum = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(items);
-    }, 1500)
+    }, 2000)
   })
 
   useEffect(() => {
-    getAlbumList.then(response => {
-      setAlbumList(response)
+    getAlbum.then(response => {
+      setAlbum(response[0]);
     });
-  }, []);
+  });
 
   return (
-    <>
-      <ItemDetail albumList={albumList}/>
-    </>
+    <div>
+      <ItemDetail cover={album?.cover} title={album?.title} artist={album?.artist} released={album?.released} genre={album?.genre}/>
+    </div>
   )
 }
 
