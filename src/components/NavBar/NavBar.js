@@ -14,10 +14,11 @@ const NavBar = () => {
           <li className="nav-bar__menu__list__item"><a href=''>HOME</a></li>
           <li className="nav-bar__menu__list__item"><a href=''>NOVEDADES</a></li>
           <li className="nav-bar__menu__list__item"><a href=''>MÁS VENDIDOS</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>ARTISTAS</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>GÉNEROS</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>NOSOTROS</a></li>
-          <li className="nav-bar__menu__list__item"><a href=''>CONTACTO</a></li>
+          <li className="nav-bar__menu__list__item"><a href=''>ROCK</a></li>
+          <li className="nav-bar__menu__list__item"><a href=''>INDIE</a></li>
+          <li className="nav-bar__menu__list__item"><a href=''>HIP HOP</a></li>
+          <li className="nav-bar__menu__list__item"><a href=''>JAZZ</a></li>
+          <li className="nav-bar__menu__list__item"><a href=''>FOLK</a></li>
         </ul>
       </nav>
       <CartWidget />
