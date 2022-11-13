@@ -9,7 +9,7 @@ const ItemsListContainer = ({ greeting, message }) => {
   const getVinylList = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(items);
-    }, 1500)
+    }, 2000)
   })
 
   useEffect(() => {
