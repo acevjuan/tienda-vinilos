@@ -1,6 +1,7 @@
 import NavBar from './components/NavBar/NavBar';
 import ItemsListContainer from './components/ItemsListContainer/ItemsListContainer';
-import ItemList from './components/ItemList/ItemList';
+import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import './App.css';
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
     <div className="App">
         <NavBar />
         <ItemsListContainer greeting="Bienvenido a roygbiv record store" message="Acá encontrarás tus álbumes favoritos, en un formato atemporal"/>
+        <ItemDetailContainer />
+        <ItemDetail />
     </div>
   );
 }
