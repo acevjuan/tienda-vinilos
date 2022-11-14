@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { items } from '../../data/data';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import './ItemDetailContainer.css';
@@ -6,9 +7,17 @@ import './ItemDetailContainer.css';
 const ItemDetailContainer = () => {
   const [album, setAlbum] = useState();
 
+  const { albumId } = useParams();
+  console.log(albumId);
+  console.log(typeof(albumId));
   const getAlbum = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(items);
+      console.log(`Mostrar detalle de album con id ${albumId}`)
+      const albumDetail = items.filter((item) => {
+        return item.id === parseInt(albumId);
+      })
+      console.log(albumDetail);
+      resolve(albumDetail);
     }, 2000)
   })
 
@@ -16,7 +25,7 @@ const ItemDetailContainer = () => {
     getAlbum.then(response => {
       setAlbum(response[0]);
     });
-  });
+  }, []);
 
   return (
     <div>

@@ -41,7 +41,7 @@ const ItemsListContainer = ({ greeting, message }) => {
     getAlbumList.then(response => {
       setAlbumList(response);
     });
-  });
+  }, []);
 
   return (
     <div className="items-list-container">

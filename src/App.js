@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ItemsListContainer greeting="Bienvenido a roygbiv record store" message="Acá encontrarás tus álbumes favoritos, en un formato atemporal"/>} />
         <Route path='/category/:filterBy' element={<ItemsListContainer greeting="Bienvenido a roygbiv record store" message="Acá encontrarás tus álbumes favoritos, en un formato atemporal"/>} />
-        <Route path='/item/:id' element={<ItemDetailContainer />} />
+        <Route path='/item/:albumId' element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>
   );
