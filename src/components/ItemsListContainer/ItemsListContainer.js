@@ -44,9 +44,13 @@ const ItemsListContainer = ({ greeting, message }) => {
 
   return (
     <div className="items-list-container">
-      <h1 className="items-list-container_greeting">{greeting}</h1>
-      <h2 className="items-list-container_message">{message}</h2>
-      <ItemList albumList={albumList}/>
+      <div className="items-list-container__greeting">
+        <h1 className="items-list-container__greeting__main">{greeting}</h1>
+        <h2 className="items-list-container__greeting__message">{message}</h2>
+      </div>
+      <div className='items-list-container__content'>
+        <ItemList albumList={albumList}/>
+      </div>
     </div>
   )
 }
