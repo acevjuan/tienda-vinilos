@@ -1,3 +1,29 @@
-.prueba-styling {
-  text-decoration: line-through;
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+.main-container {
+  border: 2px solid #282c34;
+  width: 400px;
+  height: 400px;
+}
+
+.item__cover__img {
+  max-width: 250px;
+}
+
+.item__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item__info__title, .item__info__artist, .item__info__genre {
+  font-family: 'Joan', 'serif';
+  color: #282c34;
+  margin: 0;
+  padding: 2px 0;
+  text-align: center;
+}
+
+.item__info__artist {
+  font-weight: 200;
 }
