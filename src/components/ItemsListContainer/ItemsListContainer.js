@@ -14,9 +14,20 @@ const ItemsListContainer = ({ greeting, message }) => {
     setTimeout(() => {
       if (filterBy) {
         console.log(`Filtrar por ${filterBy}`);
-        const filteredCategory = items.filter((item) => {
+        let filteredCategory = '';
+        filteredCategory = items.filter((item) => {
           return item.genre === filterBy;
         })
+        if (filterBy === 'nuevos-lanzamientos') {
+          filteredCategory = items.filter((item) => {
+            return item.newRelease === true;
+          })
+        }
+        if (filterBy === 'mas-vendidos') {
+          filteredCategory = items.filter((item) => {
+            return item.bestSeller === true;
+          })
+        }
         console.log(filteredCategory);
         resolve(filteredCategory);
       }
