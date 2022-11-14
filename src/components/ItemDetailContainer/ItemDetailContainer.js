@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
   }, []);
 
   return (
-    <div>
+    <div className='item-detail-container'>
       <ItemDetail cover={album?.cover} title={album?.title} artist={album?.artist} price={album?.price} released={album?.released} genre={album?.genre} usersRating={album?.usersRating}/>
     </div>
   )

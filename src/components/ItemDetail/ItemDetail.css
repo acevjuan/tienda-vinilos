@@ -1,3 +1,52 @@
-.prueba-styling {
-  text-decoration: line-through;
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #282c34;
+  padding: 25px;
+}
+
+.item-detail__cover__img {
+  max-width: 350px;
+}
+
+.item-detail__main-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.item-detail__main-info__title, .item-detail__main-info__artist, .item-detail__main-info__price {
+  font-family: 'Joan', 'serif';
+  margin: 5px;
+}
+
+.item-detail__main-info__artist {
+  font-weight: 200;
+}
+
+.item-detail__detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-detail__detail__genre, .item-detail__detail__released, .item-detail__detail__rating {
+  font-family: 'Joan', 'serif';
+  font-weight: 200;
+  margin: 2px;
+}
+
+.item-detail__counter {
+  margin-top: 10px;
 }

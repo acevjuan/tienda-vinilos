@@ -17,7 +17,7 @@ const ItemCount = () => {
   
   return (
     <div className='main-container'>
-          <div className='item-count__container'>
+      <div className='item-count__container'>
       <div className='item-count__container__counter'>
         <div className='item-count__container__counter__quantity'>Cantidad:</div>
         <button onClick={removeItem} className='item-count__container__counter__add-btn'>-</button>
