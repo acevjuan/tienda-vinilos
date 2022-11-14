@@ -15,6 +15,7 @@
 
 .item__cover__img {
   max-width: 250px;
+  margin-top: 25px;
 }
 
 .item__info {
@@ -23,7 +24,7 @@
   align-items: center;
 }
 
-.item__info__title, .item__info__artist, .item__info__genre {
+.item__info__title, .item__info__artist, .item__info__price {
   font-family: 'Joan', 'serif';
   color: #282c34;
   margin: 0;

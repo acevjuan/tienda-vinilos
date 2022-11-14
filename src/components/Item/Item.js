@@ -10,7 +10,7 @@ const Item = ( {album} ) => {
       <div className='item__info'>
         <h2 className='item__info__title'>{album.title}</h2>
         <h3 className='item__info__artist'>{album.artist}</h3>
-        <h4 className='item__info__genre'>{album.genre}</h4>
+        <h4 className='item__info__price'>$ {album.price}</h4>
       </div>
     </NavLink>
   )
