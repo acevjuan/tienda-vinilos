@@ -3,7 +3,7 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ cover, title, artist, price, released, genre, usersRating }) => {
   return (
-    <div className='main-container'>
+    <div className='main'>
       <div className='item-detail'>
         <div className='item-detail__cover'>
           <img className='item-detail__cover__img' alt={title} src={cover} />
