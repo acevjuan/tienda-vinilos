@@ -8,17 +8,16 @@ const ItemDetailContainer = () => {
   const [album, setAlbum] = useState();
 
   const { albumId } = useParams();
-  console.log(albumId);
-  console.log(typeof(albumId));
+  
   const getAlbum = new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log(`Mostrar detalle de album con id ${albumId}`)
+      console.log(`Mostrar detalle de album con id ${albumId}`);
       const albumDetail = items.filter((item) => {
         return item.id === parseInt(albumId);
       })
       console.log(albumDetail);
       resolve(albumDetail);
-    }, 2000)
+    }, 2000);
   })
 
   useEffect(() => {

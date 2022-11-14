@@ -8,7 +8,6 @@ const ItemsListContainer = ({ greeting, message }) => {
   const [albumList, setAlbumList] = useState([]);
 
   const { filterBy } = useParams();
-  console.log(filterBy);
   
   const getAlbumList = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -41,7 +40,7 @@ const ItemsListContainer = ({ greeting, message }) => {
     getAlbumList.then(response => {
       setAlbumList(response);
     });
-  }, []);
+  }, [filterBy]);
 
   return (
     <div className="items-list-container">
