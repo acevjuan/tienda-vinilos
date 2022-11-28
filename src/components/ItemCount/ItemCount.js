@@ -18,14 +18,17 @@ const ItemCount = () => {
   return (
     <div className='main-counter'>
       <div className='item-count__container'>
-      <div className='item-count__container__counter'>
-        <div className='item-count__container__counter__quantity'>Cantidad:</div>
-        <button onClick={removeItem} className='item-count__container__counter__add-btn'>-</button>
-        <div className='item-count__container__counter__number'>{count}</div>
-        <button onClick={addItem} className='item-count__container__counter__remove-btn'>+</button>
+        <div className='item-count__container__counter'>
+          <div className='item-count__container__counter__quantity'>Cantidad:</div>
+          <button onClick={removeItem} className='item-count__container__counter__add-btn'>-</button>
+          <div className='item-count__container__counter__number'>{count}</div>
+          <button onClick={addItem} className='item-count__container__counter__remove-btn'>+</button>
+        </div>
+        <div className='item-count__container__cart'>
+          <button className='item-count__container__cart__add'>Agregar a carrito</button>
+          <button className='item-count__container__cart__finish'>Terminar compra</button>
+        </div>
       </div>
-      <button className='item-count__container__add-cart'>Agregar a carrito</button>
-    </div>
     </div>
   )
 }

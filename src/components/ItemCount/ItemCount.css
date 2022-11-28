@@ -8,7 +8,7 @@
 .item-count__container {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 250px;
   padding: 10px 25px;
   border: 2px solid #282c34;
 }
@@ -35,10 +35,17 @@
   min-height: 21px;
 }
 
-.item-count__container__add-cart {
+.item-count__container__cart {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.item-count__container__cart__add, .item-count__container__cart__finish {
   color: #F8F9FA;
   background-color: #212529;
   border: none;
+  min-width: 110px;
   padding-top: 5px;
   padding-bottom: 5px;
   font-family: 'Joan', 'serif';
