@@ -8,7 +8,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/598a77480ab1df179f9c677bc6b2a2fe/9391518',
     price: 34.99,
     usersRating: 4.02,
-    stock: 10,
+    stock: 25,
     newRelease: false,
     bestSeller: true
   },
@@ -22,7 +22,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/b0aed8921ef6da0d63f494c15155847b/9932087',
     price: 24.99,
     usersRating: 3.95,
-    stock: 10,
+    stock: 30,
     newRelease: true,
     bestSeller: true
   },
@@ -36,7 +36,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/8e822768555ea1c7beac86893d7b51a3/10186220',
     price: 24.99,
     usersRating: 3.93,
-    stock: 10,
+    stock: 15,
     newRelease: true,
     bestSeller: false
   },
@@ -64,7 +64,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/bee79ad9f09d5b31e241eef64c1bbfb2/10406895',
     price: 24.99,
     usersRating: 3.96,
-    stock: 10,
+    stock: 5,
     newRelease: true,
     bestSeller: true
   },
@@ -78,7 +78,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/45347b0ad98d5e0ad84cfb329ad71d8a/10128558',
     price: 24.99,
     usersRating: 3.80,
-    stock: 10,
+    stock: 20,
     newRelease: true,
     bestSeller: true
   },
@@ -92,7 +92,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/b9e16b506e643afe479f8cfe50dcb4db/9473519',
     price: 34.99,
     usersRating: 3.78,
-    stock: 10,
+    stock: 25,
     newRelease: false,
     bestSeller: true
   },
@@ -106,7 +106,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/d5e6fa51873b3d4f334325f45c0f2c85/9626697',
     price: 24.99,
     usersRating: 3.72,
-    stock: 10,
+    stock: 5,
     newRelease: false,
     bestSeller: false
   },
@@ -134,7 +134,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/4d91de205350888e376ac6d3bcc15bf3/10242067',
     price: 24.99,
     usersRating: 3.72,
-    stock: 10,
+    stock: 15,
     newRelease: true,
     bestSeller: true
   },
@@ -148,7 +148,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/c828c3fab8dac29221da956c71d7f36a/3986151',
     price: 29.99,
     usersRating: 4.03,
-    stock: 10,
+    stock: 20,
     newRelease: false,
     bestSeller: true
   },
@@ -162,7 +162,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/a3f5430d8c35e5f90f21759d61322622/8080265',
     price: 24.99,
     usersRating: 4.25,
-    stock: 10,
+    stock: 5,
     newRelease: false,
     bestSeller: false
   },
@@ -190,7 +190,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/b227b2ce5a128418bb3635c43297249c/8024579',
     price: 24.99,
     usersRating: 4.34,
-    stock: 10,
+    stock: 5,
     newRelease: false,
     bestSeller: true
   },
@@ -204,7 +204,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/c5c6cc44071981bd5d6dbdfb6ce36774/9216543',
     price: 24.99,
     usersRating: 3.96,
-    stock: 10,
+    stock: 5,
     newRelease: false,
     bestSeller: false
   },
@@ -232,7 +232,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/59b50dcdd2796196f59c4fd30c535118/6506523',
     price: 49.99,
     usersRating: 4.01,
-    stock: 10,
+    stock: 2,
     newRelease: false,
     bestSeller: false
   },
@@ -246,7 +246,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/05ba995f4bbedac728e23e83b9ba045c/9540490',
     price: 49.99,
     usersRating: 3.81,
-    stock: 10,
+    stock: 5,
     newRelease: false,
     bestSeller: false
   },
@@ -260,7 +260,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/75529a02d7a8ae31d2f398834e6ff4c3/9687885',
     price: 34.99,
     usersRating: 4.22,
-    stock: 10,
+    stock: 7,
     newRelease: false,
     bestSeller: false
   },
@@ -330,7 +330,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/e6125ab40c151dc516b9d1208fbc3fec/2371321',
     price: 20,
     usersRating: 3.98,
-    stock: 10,
+    stock: 5,
     newRelease: false,
     bestSeller: false
   },
@@ -344,7 +344,7 @@ export const items = [
     cover: 'https://e.snmc.io/i/fullres/w/97163dcf56f972d3ed8a00b29de79560/9135548',
     price: 49.99,
     usersRating: 3.02,
-    stock: 10,
+    stock: 5,
     newRelease: false,
     bestSeller: false
   }

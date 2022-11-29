@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import './ItemCount.css'
 
-const ItemCount = () => {
-  const [count, setCount] = useState(0);
-  let stk = 10;
+const ItemCount = ( {albumStock} ) => {
+  const [count, setCount] = useState(1);
   const addItem = () => {
-    if (count < stk) {
+    if (count < albumStock) {
       setCount(count + 1)
     }
   };
   const removeItem = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1);
     }
   }
@@ -26,7 +25,7 @@ const ItemCount = () => {
         </div>
         <div className='item-count__container__cart'>
           <button className='item-count__container__cart__add'>Agregar a carrito</button>
-          <button className='item-count__container__cart__finish'>Terminar compra</button>
+          <button className='item-count__container__cart__finish'>Ir a carrito</button>
         </div>
       </div>
     </div>

@@ -41,10 +41,14 @@
   align-items: center;
 }
 
-.item-detail__detail__genre, .item-detail__detail__released, .item-detail__detail__rating {
+.item-detail__detail__genre, .item-detail__detail__released, .item-detail__detail__rating, .item-detail__detail__stock {
   font-family: 'Joan', 'serif';
   font-weight: 200;
   margin: 2px;
+}
+
+.item-detail__detail__stock {
+  padding: 5px 0;
 }
 
 .item-detail__counter {
