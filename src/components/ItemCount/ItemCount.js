@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './ItemCount.css'
 
 const ItemCount = ( {albumStock, setCount, count} ) => {
@@ -23,7 +24,7 @@ const ItemCount = ( {albumStock, setCount, count} ) => {
         </div>
         <div className='item-count__container__cart'>
           <button className='item-count__container__cart__add'>Agregar a carrito</button>
-          <button className='item-count__container__cart__finish'>Ir a carrito</button>
+          <button className='item-count__container__cart__finish'><NavLink to='/cart'>Ir a carrito</NavLink></button>
         </div>
       </div>
     </div>
