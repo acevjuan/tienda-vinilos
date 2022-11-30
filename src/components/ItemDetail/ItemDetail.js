@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ cover, title, artist, price, released, genre, usersRating, stock }) => {
+  const [count, setCount] = useState(0);
   return (
     <div className='main'>
       <div className='item-detail'>
@@ -20,7 +22,7 @@ const ItemDetail = ({ cover, title, artist, price, released, genre, usersRating,
           <h5 className='item-detail__detail__stock'>En inventario: {stock}</h5>
         </div>
         <div className='item-detail__counter'>
-          <ItemCount albumStock={stock}/>
+          <ItemCount albumStock={stock} setCount={setCount} count={count}/>
         </div>
       </div>
     </div>

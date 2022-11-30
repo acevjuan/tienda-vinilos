@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import './ItemCount.css'
 
-const ItemCount = ( {albumStock} ) => {
-  const [count, setCount] = useState(1);
+const ItemCount = ( {albumStock, setCount, count} ) => {
   const addItem = () => {
     if (count < albumStock) {
       setCount(count + 1)
