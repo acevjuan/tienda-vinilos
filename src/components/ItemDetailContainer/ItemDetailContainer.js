@@ -5,7 +5,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
-  const [album, setAlbum] = useState();
+  const [album, setAlbum] = useState([]);
 
   const { albumId } = useParams();
   
@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div className='item-detail-container'>
-      <ItemDetail cover={album?.cover} title={album?.title} artist={album?.artist} price={album?.price} released={album?.released} genre={album?.genre} usersRating={album?.usersRating} stock={album?.stock}/>
+      <ItemDetail album={album}/>
     </div>
   )
 }
