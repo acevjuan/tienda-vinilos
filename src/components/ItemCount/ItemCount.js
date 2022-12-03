@@ -1,13 +1,17 @@
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
 import './ItemCount.css'
+import { CartContext } from '../../context/CartContext';
 
-const ItemCount = ( {albumStock, setCount, count} ) => {
-  const addItem = () => {
-    if (count < albumStock) {
+const ItemCount = ( {album, setCount, count} ) => {
+  const { cart, addToCart } = useContext(CartContext);
+  console.log(cart); //Para verificar que sí se esté guardando en cart
+  const addToCount = () => {
+    if (count < album.stock) {
       setCount(count + 1)
     }
   };
-  const removeItem = () => {
+  const removeToCount = () => {
     if (count > 1) {
       setCount(count - 1);
     }
@@ -18,12 +22,15 @@ const ItemCount = ( {albumStock, setCount, count} ) => {
       <div className='item-count__container'>
         <div className='item-count__container__counter'>
           <div className='item-count__container__counter__quantity'>Cantidad:</div>
-          <button onClick={removeItem} className='item-count__container__counter__add-btn'>-</button>
+          <button onClick={removeToCount} className='item-count__container__counter__add-btn'>-</button>
           <div className='item-count__container__counter__number'>{count}</div>
-          <button onClick={addItem} className='item-count__container__counter__remove-btn'>+</button>
+          <button onClick={addToCount} className='item-count__container__counter__remove-btn'>+</button>
         </div>
         <div className='item-count__container__cart'>
-          <button className='item-count__container__cart__add'>Agregar a carrito</button>
+          <button className='item-count__container__cart__add' onClick={() => {
+            addToCart(album, count);
+            console.log('Está funcionando');
+          }}>Agregar a carrito</button>
           <button className='item-count__container__cart__finish'><NavLink to='/cart'>Ir a carrito</NavLink></button>
         </div>
       </div>

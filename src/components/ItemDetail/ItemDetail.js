@@ -22,7 +22,7 @@ const ItemDetail = ({ album }) => {
           <h5 className='item-detail__detail__stock'>En inventario: {album.stock}</h5>
         </div>
         <div className='item-detail__counter'>
-          <ItemCount albumStock={album.stock} setCount={setCount} count={count}/>
+          <ItemCount album={album} setCount={setCount} count={count}/>
         </div>
       </div>
     </div>
