@@ -3,7 +3,7 @@ import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ cover, title, artist, price, released, genre, usersRating, stock }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   return (
     <div className='main'>
       <div className='item-detail'>
