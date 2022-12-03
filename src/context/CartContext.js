@@ -9,9 +9,13 @@ const CartProvider = ({ children }) => {
   const addToCart = (item, quantity) => {
     setCart([...cart, { ...item, quantity }]);
   }
+
+  const clearCart = () => {
+    setCart([]);
+  }
   
   return(
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, clearCart }}>
       {children}
     </CartContext.Provider>
   )

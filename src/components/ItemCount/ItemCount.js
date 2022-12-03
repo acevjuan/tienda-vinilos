@@ -27,10 +27,7 @@ const ItemCount = ( {album, setCount, count} ) => {
           <button onClick={addToCount} className='item-count__container__counter__remove-btn'>+</button>
         </div>
         <div className='item-count__container__cart'>
-          <button className='item-count__container__cart__add' onClick={() => {
-            addToCart(album, count);
-            console.log('Está funcionando');
-          }}>Agregar a carrito</button>
+          <button className='item-count__container__cart__add' onClick={() => {addToCart(album, count)}}>Agregar a carrito</button>
           <button className='item-count__container__cart__finish'><NavLink to='/cart'>Ir a carrito</NavLink></button>
         </div>
       </div>
