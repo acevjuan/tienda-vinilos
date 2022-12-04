@@ -1,45 +1,34 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { items } from '../../data/data';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import ItemList from '../ItemList/ItemList';
 import './style.css'
 
 const ItemsListContainer = ({ greeting, message }) => {
+
+
   const [albumList, setAlbumList] = useState([]);
 
   const { filterBy } = useParams();
   
-  const getAlbumList = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (filterBy) {
-        console.log(`Filtrar por ${filterBy}`);
-        let filteredCategory = '';
-        filteredCategory = items.filter((item) => {
-          return item.genre === filterBy;
-        })
-        if (filterBy === 'nuevos-lanzamientos') {
-          filteredCategory = items.filter((item) => {
-            return item.newRelease === true;
-          })
-        }
-        if (filterBy === 'mas-vendidos') {
-          filteredCategory = items.filter((item) => {
-            return item.bestSeller === true;
-          })
-        }
-        console.log(filteredCategory);
-        resolve(filteredCategory);
-      }
-      else {
-      resolve(items)
-      };
-    }, 2000)
-  })
+  const getAlbumList = () => {
+    const db = getFirestore();
+    const querySnapshot = collection(db, 'albums');
+    getDocs(querySnapshot)
+      .then((response) => {
+        const data = response.docs.map((album) => {
+          console.log(album.data());
+          console.log(album.id);
+          return {id: album.id, ...album.data()};
+        });
+        setAlbumList(data);
+        console.log(data);
+      })
+      .catch((error) => {console.log(error)})
+  };
 
   useEffect(() => {
-    getAlbumList.then(response => {
-      setAlbumList(response);
-    });
+    getAlbumList();
   }, [filterBy]);
 
   return (
