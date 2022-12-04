@@ -1,8 +1,15 @@
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 import './Cart.css';
 
 const Cart = () => {
+  const { cart } = useContext(CartContext);
   return (
-    <div className='prueba-cart'>Cart</div>
+    <>
+      {cart.map((cart) => (
+        <div key={cart.id}>{cart.title}</div>
+      ))}
+    </>
   )
 }
 
