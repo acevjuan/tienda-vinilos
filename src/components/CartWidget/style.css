@@ -7,3 +7,11 @@
 .nav-bar__cart__img {
   height: 50px;
 }
+
+.nav-bar__item-count {
+  color: #F8F9FA;
+}
+
+.nav-bar__item-count__none {
+  display: none;
+}
