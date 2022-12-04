@@ -1,12 +1,19 @@
 import { NavLink } from 'react-router-dom';
-import cart from '../../assets/cart.png'
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import cartIcon from '../../assets/cart-icon.png'
 import './style.css'
 
 const CartWidget = () => {
+  const { cart } = useContext(CartContext);
+  
   return (
-    <NavLink to='/cart' className="nav-bar__cart">
-      <img className="nav-bar__cart__img" src={cart} alt="carrito de compras"></img>
-    </NavLink>
+    <>
+      <NavLink to='/cart' className="nav-bar__cart">
+        <img className="nav-bar__cart__img" src={cartIcon} alt="carrito de compras" />
+      </NavLink>
+      <div style={{ color: 'white' }}>{cart.length}</div>
+    </>
   )
 }
 
