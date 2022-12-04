@@ -5,7 +5,7 @@ import './Cart.css';
 const Cart = () => {
   const { cart, clearCart } = useContext(CartContext);
   
-  if(!cart.length == 0) {
+  if(cart.length > 0) {
     return (
       <>
         {cart.map((cart) => (
