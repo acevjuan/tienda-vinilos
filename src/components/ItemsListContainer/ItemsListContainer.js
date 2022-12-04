@@ -6,7 +6,6 @@ import './style.css'
 
 const ItemsListContainer = ({ greeting, message }) => {
 
-
   const [albumList, setAlbumList] = useState([]);
 
   const { filterBy } = useParams();
@@ -14,7 +13,9 @@ const ItemsListContainer = ({ greeting, message }) => {
   const getAlbumList = () => {
     const db = getFirestore();
     const querySnapshot = collection(db, 'albums');
-    getDocs(querySnapshot)
+    if(filterBy) {
+      const queryFilter = query(querySnapshot, where('genre', '==', filterBy));
+      getDocs(queryFilter)
       .then((response) => {
         const data = response.docs.map((album) => {
           console.log(album.data());
@@ -25,6 +26,19 @@ const ItemsListContainer = ({ greeting, message }) => {
         console.log(data);
       })
       .catch((error) => {console.log(error)})
+    } else {
+      getDocs(querySnapshot)
+      .then((response) => {
+        const data = response.docs.map((album) => {
+          console.log(album.data());
+          console.log(album.id);
+          return {id: album.id, ...album.data()};
+        });
+        setAlbumList(data);
+        console.log(data);
+      })
+      .catch((error) => {console.log(error)})
+    }    
   };
 
   useEffect(() => {
