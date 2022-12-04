@@ -3,6 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCtItwWa-rwVJVYQdk8-zcsR8sav-bZNf8",
+  authDomain: "roygbiv-record-store.firebaseapp.com",
+  projectId: "roygbiv-record-store",
+  storageBucket: "roygbiv-record-store.appspot.com",
+  messagingSenderId: "266146402827",
+  appId: "1:266146402827:web:c3145a03e9d7466147ad0e"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
