@@ -14,28 +14,45 @@ const ItemsListContainer = ({ greeting, message }) => {
     const db = getFirestore();
     const querySnapshot = collection(db, 'albums');
     if(filterBy) {
-      const queryFilter = query(querySnapshot, where('genre', '==', filterBy));
+      let queryFilter;
+      queryFilter = query(querySnapshot, where('genre', '==', filterBy));
+      if(filterBy === 'nuevos-lanzamientos') {
+        queryFilter = query(querySnapshot, where('newRelease', '==', true));
+        getDocs(queryFilter)
+        .then((response) => {
+          const data = response.docs.map((album) => {
+            return {id: album.id, ...album.data()};
+          });
+          setAlbumList(data);
+        })
+        .catch((error) => {console.log(error)})
+      }
+      if(filterBy == 'mas-vendidos') {
+        queryFilter = query(querySnapshot, where('bestSeller', '==', true));
+        getDocs(queryFilter)
+        .then((response) => {
+          const data = response.docs.map((album) => {
+            return {id: album.id, ...album.data()};
+          });
+          setAlbumList(data);
+        })
+        .catch((error) => {console.log(error)});
+      }
       getDocs(queryFilter)
       .then((response) => {
         const data = response.docs.map((album) => {
-          console.log(album.data());
-          console.log(album.id);
           return {id: album.id, ...album.data()};
         });
         setAlbumList(data);
-        console.log(data);
       })
       .catch((error) => {console.log(error)})
     } else {
       getDocs(querySnapshot)
       .then((response) => {
         const data = response.docs.map((album) => {
-          console.log(album.data());
-          console.log(album.id);
           return {id: album.id, ...album.data()};
         });
         setAlbumList(data);
-        console.log(data);
       })
       .catch((error) => {console.log(error)})
     }    
