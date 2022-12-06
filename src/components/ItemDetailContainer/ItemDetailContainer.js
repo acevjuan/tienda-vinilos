@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { items } from '../../data/data';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import './ItemDetailContainer.css';
 
@@ -9,22 +9,21 @@ const ItemDetailContainer = () => {
 
   const { albumId } = useParams();
   
-  const getAlbum = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log(`Mostrar detalle de album con id ${albumId}`);
-      const albumDetail = items.filter((item) => {
-        return item.id === parseInt(albumId);
+  const getAlbum = () => {
+    const db = getFirestore();
+
+    const query = doc(db, 'albums', albumId);
+
+    getDoc(query)
+      .then((response) => {
+        setAlbum({ id: response.id, ...response.data() });
       })
-      console.log(albumDetail);
-      resolve(albumDetail);
-    }, 2000);
-  })
+      .catch((error) => console.log(error));
+  }
 
   useEffect(() => {
-    getAlbum.then(response => {
-      setAlbum(response[0]);
-    });
-  });
+    getAlbum();
+  }, [albumId]);
 
   return (
     <div className='item-detail-container'>
