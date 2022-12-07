@@ -1,10 +1,23 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../context/CartContext';
 import './Cart.css';
 
 const Cart = () => {
   const { cart, clearCart } = useContext(CartContext);
   
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const [totalAlbums, setTotalAlbums] = useState(0);
+
+  const getTotals = () => {
+    setTotalPrice(cart.reduce((acc, product) => acc + product.price * product.quantity, 0));
+    setTotalAlbums(cart.reduce((acc, product) => acc + product.quantity, 0))
+  }
+
+  useEffect(() => {
+    getTotals();
+  }, [cart]);
+
   if(cart.length > 0) {
     return (
       <>
@@ -18,6 +31,8 @@ const Cart = () => {
           </div>
         ))}
         <button onClick={clearCart}>Vaciar carrito</button>
+        <h2>Total price: $ {totalPrice}</h2>
+        <h2>Total albums: {totalAlbums}</h2>
       </>
     )
   } else {
