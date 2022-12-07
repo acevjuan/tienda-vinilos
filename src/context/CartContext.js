@@ -6,12 +6,20 @@ export const CartContext = createContext([]);
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  const isInCart = (id) => {
+    return cart.some((album) => album.id === id);
+  };
+
   const addToCart = (item, quantity) => {
-    setCart([...cart, { ...item, quantity }]);
-  }
+    if(isInCart(item.id)) {
+      alert('el producto ya se encuentra en el carrito');
+    } else {
+      setCart([...cart, { ...item, quantity }]);
+    }
+  };
 
   const clearCart = () => {
-    setCart([]);
+    ;setCart([]);
   }
   
   return(
