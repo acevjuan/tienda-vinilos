@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { collection, addDoc, getFirestore } from 'firebase/firestore';
 import './Cart.css';
 
 const Cart = () => {
@@ -13,6 +14,25 @@ const Cart = () => {
     setTotalPrice(cart.reduce((acc, product) => acc + product.price * product.quantity, 0));
     setTotalAlbums(cart.reduce((acc, product) => acc + product.quantity, 0))
   }
+
+  const createOrder = () => {
+    const db = getFirestore();
+    const query = collection(db, 'orders');
+    const newOrder = {
+      buyer: {
+        name: 'Marcos',
+        phone: '123456789',
+        email: 'test@test.com'
+      },
+
+      items: cart,
+      date: '07/12/2022',
+      total: totalAlbums
+    }
+    addDoc(query, newOrder)
+      .then((response) => alert(`Orden creadad con el id ${response.id}`))
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
     getTotals();
@@ -33,6 +53,7 @@ const Cart = () => {
         <button onClick={clearCart}>Vaciar carrito</button>
         <h2>Total price: $ {totalPrice}</h2>
         <h2>Total albums: {totalAlbums}</h2>
+        <button onClick={createOrder}>Crear orden</button>
       </>
     )
   } else {
