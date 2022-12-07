@@ -30,7 +30,10 @@ const Cart = () => {
       total: totalAlbums
     }
     addDoc(query, newOrder)
-      .then((response) => alert(`Orden creadad con el id ${response.id}`))
+      .then((response) => {
+        alert(`Orden creadad con el id ${response.id}`);
+        clearCart();
+      })
       .catch((error) => console.log(error));
   };
 
