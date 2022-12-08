@@ -11,6 +11,12 @@ const Cart = () => {
 
   const [totalAlbums, setTotalAlbums] = useState(0);
 
+  const [buyerInfo, setBuyerInfo] = useState({
+    name: '',
+    phone: '',
+    email: ''
+  });
+
   const getTotals = () => {
     setTotalPrice(cart.reduce((acc, product) => acc + product.price * product.quantity, 0));
     setTotalAlbums(cart.reduce((acc, product) => acc + product.quantity, 0))
@@ -21,9 +27,9 @@ const Cart = () => {
     const query = collection(db, 'orders');
     const newOrder = {
       buyer: {
-        name: 'Marcos',
-        phone: '123456789',
-        email: 'test@test.com'
+        name: buyerInfo.name,
+        phone: buyerInfo.phone,
+        email: buyerInfo.email
       },
 
       items: cart,
@@ -51,6 +57,13 @@ const Cart = () => {
     getTotals();
   }, [cart]);
 
+  const handleInputChange = (event) => {
+    setBuyerInfo({
+      ...buyerInfo,
+      [event.target.name] : event.target.value
+    });
+  }
+
   if(cart.length > 0) {
     return (
       <>
@@ -66,6 +79,11 @@ const Cart = () => {
         <button onClick={clearCart}>Vaciar carrito</button>
         <h2>Total price: $ {totalPrice}</h2>
         <h2>Total albums: {totalAlbums}</h2>
+        <div>
+          <input name='name' type='text' placeholder='Nombre' value={buyerInfo.name} onChange={handleInputChange}/>
+          <input name='phone' type='text' placeholder='Teléfono' value={buyerInfo.phone} onChange={handleInputChange}/>
+          <input name='email' type='text' placeholder='e-mail' value={buyerInfo.email} onChange={handleInputChange}/>
+        </div>
         <button onClick={createOrder}>Crear orden</button>
       </>
     )
