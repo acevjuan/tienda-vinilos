@@ -5,7 +5,7 @@ import moment from 'moment';
 import './Cart.css';
 
 const Cart = () => {
-  const { cart, clearCart } = useContext(CartContext);
+  const { cart, removeFromCart, clearCart } = useContext(CartContext);
   
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -74,6 +74,7 @@ const Cart = () => {
             <h4>{cart.artist}</h4>
             <h5>{cart.quantity}</h5>
             <h5>$ {cart.price * cart.quantity}</h5>
+            <button onClick={() => {removeFromCart(cart.id)}}>Remove</button>
           </div>
         ))}
         <button onClick={clearCart}>Vaciar carrito</button>
