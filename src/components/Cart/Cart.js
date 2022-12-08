@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { collection, addDoc, getFirestore } from 'firebase/firestore';
+import { collection, doc, addDoc, updateDoc, getFirestore } from 'firebase/firestore';
 import './Cart.css';
 
 const Cart = () => {
@@ -33,6 +33,15 @@ const Cart = () => {
       .then((response) => {
         alert(`Orden creadad con el id ${response.id}`);
         clearCart();
+        return response;
+      })
+      .then((res) => {
+        cart.forEach((album) => {
+          const query = doc(db, 'albums', album.id);
+          updateDoc(query, {
+            stock: album.stock - album.quantity
+          })
+        })
       })
       .catch((error) => console.log(error));
   };
