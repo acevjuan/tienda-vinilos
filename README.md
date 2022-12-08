@@ -16,5 +16,5 @@ Firestore de Google Firebase para el manejo de base de datos.
 
 ## Ejemplo de navegación
 
-![](https://github.com/acevjuan/tienda-vinilos/ejemplo-navegacion.gif)
+![](https://github.com/acevjuan/tienda-vinilos/blob/main/ejemplo-navegacion.gif)
 
