@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { collection, doc, addDoc, updateDoc, getFirestore } from 'firebase/firestore';
+import { NavLink } from 'react-router-dom';
 import moment from 'moment';
 import './Cart.css';
 
@@ -66,30 +67,62 @@ const Cart = () => {
 
   if(cart.length > 0) {
     return (
-      <>
-        {cart.map((cart) => (
-          <div key={cart.id}>
-            <img src={cart.cover} alt={cart.title} style={{ maxWidth: '75px' }} />
-            <h3>{cart.title}</h3>
-            <h4>{cart.artist}</h4>
-            <h5>{cart.quantity}</h5>
-            <h5>$ {cart.price * cart.quantity}</h5>
-            <button onClick={() => {removeFromCart(cart.id)}}>Remove</button>
-          </div>
-        ))}
-        <button onClick={clearCart}>Vaciar carrito</button>
-        <h2>Total price: $ {totalPrice}</h2>
-        <h2>Total albums: {totalAlbums}</h2>
-        <div>
-          <input name='name' type='text' placeholder='Nombre' value={buyerInfo.name} onChange={handleInputChange}/>
-          <input name='phone' type='text' placeholder='Teléfono' value={buyerInfo.phone} onChange={handleInputChange}/>
-          <input name='email' type='text' placeholder='e-mail' value={buyerInfo.email} onChange={handleInputChange}/>
+      <div className='cart'>
+        <div className='cart__list'>
+          {cart.map((cart) => (
+            <div key={cart.id} className='cart__list__item'>
+              <div className='cart__list__item__cover'>
+                <img className='cart__list__item__cover__img' src={cart.cover} alt={cart.title} />
+              </div>
+              <div className='cart__list__item__info'>
+                <h3 className='cart__list__item__info__title'>{cart.title}</h3>
+                <h4 className='cart__list__item__info__artist'>{cart.artist}</h4>
+                <h5 className='cart__list__item__info__qty'>{cart.quantity}</h5>
+                <h5 className='cart__list__item__info__price'>$ {cart.price * cart.quantity}</h5>
+                <button className='cart__list__item__remove-btn' onClick={() => {removeFromCart(cart.id)}}>Remove</button>
+              </div>
+            </div>
+          ))}
         </div>
-        <button onClick={createOrder}>Crear orden</button>
-      </>
+        
+        <div className='cart__detail'>
+          <h2 className='cart__detail__title'>Detalles de la compra</h2>
+          <h3 className='cart__detail__total-price'>Total price: $ {totalPrice}</h3>
+          <h3 className='cart__detail__total-qty'>Total albums: {totalAlbums}</h3>
+          <div className='cart__detail__user'>
+            <h3 className='cart__detail__user__title'>Datos del comprador:</h3>
+            <div className='cart__detail__user__form'>
+              <div className='cart__detail__user__form__name'>
+                <h4 className='cart__detail__user__form__name__title'>Nombre: </h4>
+                <input className='cart__detail__user__form__name__input' name='name' type='text' placeholder='Nombre' value={buyerInfo.name} onChange={handleInputChange}/>
+              </div>
+              <div className='cart__detail__user__form__phone'>
+                <h4 className='cart__detail__user__form__phone__title'>Teléfono: </h4>
+                <input className='cart__detail__user__form__phone__input' name='phone' type='text' placeholder='Teléfono' value={buyerInfo.phone} onChange={handleInputChange}/>
+              </div>
+              <div className='cart__detail__user__form__email'>
+                <h4 className='cart__detail__user__form__email__title'>E-Mail:</h4>
+                <input className='cart__detail__user__form__email__input' name='email' type='text' placeholder='e-mail' value={buyerInfo.email} onChange={handleInputChange}/>
+              </div>
+            </div>
+          </div>
+          <button className='cart-page__container__order-btn' onClick={createOrder}>Crear orden</button>
+          <button className='cart-page__container__clear-btn' onClick={clearCart}>Vaciar carrito</button>
+        </div>
+      </div>
     )
   } else {
-    return(<h2>Carrito vacío</h2>)
+    return(
+      <div className='cart-empty'>
+        <div className='cart-empty__info'>
+          <h2 className='cart-empty__info__main'>Carrito vacío</h2>
+          <h3 className='cart-empty__info__message'>Visita el catálogo para elegir las opciones que desees comprar</h3>
+          <NavLink to='/'>
+            <button className='cart-empty__info__btn'>Ir a catálogo</button>
+          </NavLink>
+        </div>
+      </div>
+    )
   }
   
 }

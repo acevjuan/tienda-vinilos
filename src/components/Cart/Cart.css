@@ -1,3 +1,102 @@
-.prueba-cart {
-  text-decoration: line-through;
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+* {
+  font-family: 'Joan', 'serif';
+}
+
+.cart {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cart__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart__list__item {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  border: 2px solid #282c34;
+
+}
+
+.cart__list__item__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+}
+
+.cart__list__item__info__title, .cart__list__item__info__artist, .cart__list__item__info__qty, .cart__list__item__info__price, .cart__list__item__remove-btn {
+  margin: 0;
+  padding: 2px 0;
+}
+
+.cart__list__item__remove-btn {
+  color: #F8F9FA;
+  background-color: #212529;
+  border: none;
+  min-width: 100px;
+  min-height: 20px;
+  cursor: pointer;
+}
+
+.cart__list__item__cover {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.cart__list__item__cover__img {
+  max-width: 200px;
+}
+
+.cart__detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__detail__title, .cart__detail__total-price, .cart__detail__title, .cart__detail__total-qty, .cart__detail__user {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.cart__detail__user__form__name, .cart__detail__user__form__phone, .cart__detail__user__form__email {
+  display: flex;
+  align-items: center;
+}
+
+.cart__detail__user__form__name__title, .cart__detail__user__form__phone__title, .cart__detail__user__form__email__title {
+  margin-right: 10px;
+}
+
+.cart__detail__user__form__name__input, .cart__detail__user__form__phone__input, .cart__detail__user__form__email__input {
+  max-height: 20px;
+  min-width: 200px;
+}
+
+.cart-page__container__order-btn, .cart-page__container__clear-btn {
+  margin: 5px 0;
+  color: #F8F9FA;
+  background-color: #212529;
+  border: none;
+  min-height: 25px;
+  cursor: pointer;
+}
+
+.cart-empty__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-empty__info__btn {
+  color: #F8F9FA;
+  background-color: #212529;
+  border: none;
+  min-width: 150px;
+  min-height: 50px;
+  cursor: pointer;
 }

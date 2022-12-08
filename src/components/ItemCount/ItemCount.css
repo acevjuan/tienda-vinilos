@@ -33,6 +33,7 @@
   border: none;
   min-width: 21px;
   min-height: 21px;
+  cursor: pointer;
 }
 
 .item-count__container__cart {
@@ -49,5 +50,6 @@
   padding-top: 5px;
   padding-bottom: 5px;
   font-family: 'Joan', 'serif';
+  cursor: pointer;
 }
 
