@@ -7,9 +7,14 @@ El usuario puede acceder al catálogo de álbumes, filtrarlos por diferentes cat
 
 Esta aplicación se realiza como proyecto final para el curso de React JS de Coderhouse, comisión #34805.
 
+Deploy en Vercel: https://tienda-vinilos-beta.vercel.app/
+
 ## Tecnologías utilizadas en el proyecto
 
 React JS para el desarrollo de la aplicación.
 Firestore de Google Firebase para el manejo de base de datos.
 
 ## Ejemplo de navegación
+
+![](https://github.com/acevjuan/tienda-vinilos/ejemplo-navegacion.gif)
+
