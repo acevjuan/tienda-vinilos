@@ -8,21 +8,26 @@ import './Cart.css';
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
   
+  // La suma de los precios de todos los productos agregados al carrito, es decir, el total a pagar por el usuario.
   const [totalPrice, setTotalPrice] = useState(0);
 
+  // La suma total de número de productos agregados al carrito.
   const [totalAlbums, setTotalAlbums] = useState(0);
 
+  // Datos del usuario/comprador para generar la orden de compra.
   const [buyerInfo, setBuyerInfo] = useState({
     name: '',
     phone: '',
     email: ''
   });
 
+  // getTotals asigna los states totalPrice y totalAlbums con el precio final y número de productos respectivamente.
   const getTotals = () => {
     setTotalPrice(cart.reduce((acc, product) => acc + product.price * product.quantity, 0));
     setTotalAlbums(cart.reduce((acc, product) => acc + product.quantity, 0))
   }
 
+  // createOrder genera la orden de compra con los productos agregados al carrito y crea el documento en Firestore con esta información.
   const createOrder = () => {
     const db = getFirestore();
     const query = collection(db, 'orders');
@@ -32,14 +37,13 @@ const Cart = () => {
         phone: buyerInfo.phone,
         email: buyerInfo.email
       },
-
       items: cart,
       date: moment().format('DD/MM/YYYY'),
       total: totalAlbums
     }
     addDoc(query, newOrder)
       .then((response) => {
-        alert(`Orden creadad con el id ${response.id}`);
+        alert(`¡Listo! Tu orden fue creada con éxito. El id asignado a tu orden es el siguiente: ${response.id}`);
         clearCart();
         return response;
       })
@@ -54,10 +58,7 @@ const Cart = () => {
       .catch((error) => console.log(error));
   };
 
-  useEffect(() => {
-    getTotals();
-  }, [cart]);
-
+  // Permite utilizar y obtener datos dinámicos en los inputs de formularios.
   const handleInputChange = (event) => {
     setBuyerInfo({
       ...buyerInfo,
@@ -65,6 +66,11 @@ const Cart = () => {
     });
   }
 
+  useEffect(() => {
+    getTotals();
+  }, [cart]);
+
+  // En caso de existir productos en el carrito, se renderiza la información correspondiente.
   if(cart.length > 0) {
     return (
       <div className='cart'>
@@ -77,9 +83,9 @@ const Cart = () => {
               <div className='cart__list__item__info'>
                 <h3 className='cart__list__item__info__title'>{cart.title}</h3>
                 <h4 className='cart__list__item__info__artist'>{cart.artist}</h4>
-                <h5 className='cart__list__item__info__qty'>{cart.quantity}</h5>
-                <h5 className='cart__list__item__info__price'>$ {cart.price * cart.quantity}</h5>
-                <button className='cart__list__item__remove-btn' onClick={() => {removeFromCart(cart.id)}}>Remove</button>
+                <h5 className='cart__list__item__info__qty'>Cantidad: {cart.quantity}</h5>
+                <h5 className='cart__list__item__info__price'>Precio total: $ {cart.price * cart.quantity}</h5>
+                <button className='cart__list__item__remove-btn' onClick={() => {removeFromCart(cart.id)}}>Quitar del carrito</button>
               </div>
             </div>
           ))}
@@ -87,8 +93,8 @@ const Cart = () => {
         
         <div className='cart__detail'>
           <h2 className='cart__detail__title'>Detalles de la compra</h2>
-          <h3 className='cart__detail__total-price'>Total price: $ {(totalPrice).toFixed(2)}</h3>
-          <h3 className='cart__detail__total-qty'>Total albums: {totalAlbums}</h3>
+          <h3 className='cart__detail__total-price'>Precio total: $ {(totalPrice).toFixed(2)}</h3>
+          <h3 className='cart__detail__total-qty'>Número de productos: {totalAlbums}</h3>
           <div className='cart__detail__user'>
             <h3 className='cart__detail__user__title'>Datos del comprador:</h3>
             <div className='cart__detail__user__form'>
@@ -111,6 +117,7 @@ const Cart = () => {
         </div>
       </div>
     )
+  // Si no hay productos en el carrito, se renderizará un aviso y botón para retornar a la página principal.
   } else {
     return(
       <div className='cart-empty'>

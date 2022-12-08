@@ -4,18 +4,21 @@ import './ItemCount.css'
 import { CartContext } from '../../context/CartContext';
 
 const ItemCount = ( {album, setCount, count} ) => {
-  const { cart, addToCart } = useContext(CartContext);
-  console.log(cart); //Para verificar que sí se esté guardando en cart
+  const { addToCart } = useContext(CartContext);
+
+  // Incrementa el contador de productos a agregar al carrito.
   const addToCount = () => {
     if (count < album.stock) {
-      setCount(count + 1)
-    }
+      setCount(count + 1);
+    };
   };
+  
+    // Reduce el contador de productos a agregar al carrito.
   const removeToCount = () => {
     if (count > 1) {
       setCount(count - 1);
-    }
-  }
+    };
+  };
   
   return (
     <div className='main-counter'>

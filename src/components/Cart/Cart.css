@@ -23,6 +23,15 @@
 
 }
 
+.cart__list__item__cover {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.cart__list__item__cover__img {
+  max-width: 200px;
+}
+
 .cart__list__item__info {
   display: flex;
   flex-direction: column;
@@ -42,15 +51,6 @@
   min-width: 100px;
   min-height: 20px;
   cursor: pointer;
-}
-
-.cart__list__item__cover {
-  max-height: 200px;
-  max-width: 200px;
-}
-
-.cart__list__item__cover__img {
-  max-width: 200px;
 }
 
 .cart__detail {

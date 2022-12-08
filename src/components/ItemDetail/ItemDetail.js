@@ -4,6 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ album }) => {
   const [count, setCount] = useState(1);
+  
   return (
     <div className='main'>
       <div className='item-detail'>

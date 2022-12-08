@@ -7,8 +7,10 @@ import './ItemDetailContainer.css';
 const ItemDetailContainer = () => {
   const [album, setAlbum] = useState([]);
 
+  // Para indicar el album/prpducto a mostrar.
   const { albumId } = useParams();
   
+  // Trae la información del album/producto seleccionado de Firestore.
   const getAlbum = () => {
     const db = getFirestore();
 
