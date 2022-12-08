@@ -8,12 +8,12 @@ const CartWidget = () => {
   const { cart, totalAdded } = useContext(CartContext);
   
   return (
-    <>
-      <NavLink to='/cart' className="nav-bar__cart">
-        <img className="nav-bar__cart__img" src={cartIcon} alt="carrito de compras" />
+    <div className='nav-bar__cart__container'>
+      <NavLink to='/cart' className="nav-bar__cart__container__icon">
+        <img className="nav-bar__cart__container__icon_img" src={cartIcon} alt="carrito de compras" />
       </NavLink>
-      <div className={cart.length === 0 ? 'nav-bar__item-count__none' : 'nav-bar__item-count'}>{totalAdded}</div>
-    </>
+      <div className={cart.length === 0 ? 'nav-bar__cart__container__item-count-none' : 'nav-bar__cart__container__item-count'}>{totalAdded}</div>
+    </div>
   )
 }
 

@@ -1,17 +1,21 @@
-.nav-bar__cart {
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+.nav-bar__cart__container {
   display: flex;
   padding: 0 10px;
   background-color: #F8F9FA;
 }
 
-.nav-bar__cart__img {
+.nav-bar__cart__container__icon_img {
   height: 50px;
 }
 
-.nav-bar__item-count {
-  color: #F8F9FA;
+.nav-bar__cart__container__item-count {
+  font-family: 'Joan', 'serif';
+  padding: 5px 5px;
+  color: #282c34;
 }
 
-.nav-bar__item-count__none {
+.nav-bar__cart__container__item-count-none {
   display: none;
 }
