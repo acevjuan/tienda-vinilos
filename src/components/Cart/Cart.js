@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { collection, doc, addDoc, updateDoc, getFirestore } from 'firebase/firestore';
+import moment from 'moment';
 import './Cart.css';
 
 const Cart = () => {
@@ -26,7 +27,7 @@ const Cart = () => {
       },
 
       items: cart,
-      date: '07/12/2022',
+      date: moment().format('DD/MM/YYYY'),
       total: totalAlbums
     }
     addDoc(query, newOrder)
@@ -40,8 +41,8 @@ const Cart = () => {
           const query = doc(db, 'albums', album.id);
           updateDoc(query, {
             stock: album.stock - album.quantity
-          })
-        })
+          });
+        });
       })
       .catch((error) => console.log(error));
   };
