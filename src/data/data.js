@@ -1,3 +1,5 @@
+// Base de datos de prueba antes de utilizar Firebase. Se deja en el proyecto a modo de información.
+
 export const items = [
   {
     id: 1,

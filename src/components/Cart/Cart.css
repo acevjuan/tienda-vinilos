@@ -94,6 +94,7 @@
 
 .cart-empty__info__btn {
   color: #F8F9FA;
+  font-size: medium;
   background-color: #212529;
   border: none;
   min-width: 150px;

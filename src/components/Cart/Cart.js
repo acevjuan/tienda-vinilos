@@ -87,7 +87,7 @@ const Cart = () => {
         
         <div className='cart__detail'>
           <h2 className='cart__detail__title'>Detalles de la compra</h2>
-          <h3 className='cart__detail__total-price'>Total price: $ {totalPrice}</h3>
+          <h3 className='cart__detail__total-price'>Total price: $ {(totalPrice).toFixed(2)}</h3>
           <h3 className='cart__detail__total-qty'>Total albums: {totalAlbums}</h3>
           <div className='cart__detail__user'>
             <h3 className='cart__detail__user__title'>Datos del comprador:</h3>
